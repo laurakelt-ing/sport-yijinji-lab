@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引｜吉祥坊 — 综合信息整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde6ce 0%, #f8d5b0 50%, #f0c49a 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      background: rgba(255, 245, 230, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 3.2rem 2rem 2.8rem;
+      border-radius: 48px 48px 32px 32px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 12px 30px rgba(140, 90, 50, 0.12);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 540;
+      letter-spacing: -0.02em;
+      color: #3d2b1b;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #b3733c, #8e5a2b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.18rem;
+      line-height: 1.6;
+      color: #4d3826;
+      background: rgba(255, 255, 255, 0.45);
+      padding: 0.9rem 1.6rem;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #ffffffef;
+      backdrop-filter: blur(2px);
+      border-radius: 36px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(110, 70, 40, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(100, 65, 35, 0.10);
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #3d2a17;
+      border-left: 5px solid #d9995b;
+      padding-left: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #5c3f26;
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 优势区 网格 */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .advantage-item {
+      background: #fcf5ec;
+      border-radius: 28px;
+      padding: 1.4rem 1.2rem;
+      transition: background 0.2s;
+    }
+
+    .advantage-item strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 540;
+      color: #3f2b19;
+      margin-bottom: 0.4rem;
+    }
+
+    .advantage-item p {
+      font-size: 0.96rem;
+      color: #5f4a34;
+      line-height: 1.5;
+    }
+
+    /* 说明区 */
+    .desc-block p {
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+      color: #2f2013;
+    }
+
+    .desc-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inline-link {
+      color: #a7652c;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 2px solid #e4b889;
+      transition: border-color 0.15s, color 0.15s;
+      padding-bottom: 1px;
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #a7652c;
+      color: #7f4e23;
+    }
+
+    /* FAQ 摘要 */
+    .faq-item {
+      border-bottom: 1px solid #ebd7c2;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 520;
+      color: #3f2c1a;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .faq-q::before {
+      content: "▹";
+      color: #c9864b;
+      font-size: 1.2rem;
+    }
+
+    .faq-a {
+      color: #4d3927;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      padding-left: 1.7rem;
+    }
+
+    .faq-a a {
+      color: #a7652c;
+      text-decoration: none;
+      border-bottom: 1px dashed #cfaa84;
+    }
+
+    .faq-a a:hover {
+      border-bottom-style: solid;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      background: #f2e2d1d9;
+      backdrop-filter: blur(4px);
+      border-radius: 48px 48px 28px 28px;
+      padding: 1.6rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.2rem;
+    }
+
+    .footer-links p {
+      color: #3b291b;
+      font-size: 0.95rem;
+      margin: 0.3rem 0;
+    }
+
+    .footer-links a {
+      color: #7b522f;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 40px;
+      background: #fff7ed;
+      padding: 0.45rem 1.4rem;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+      font-size: 1rem;
+      border: 1px solid #dbb796;
+    }
+
+    .footer-links a:hover {
+      background: #dbb796;
+      color: #2d1d0f;
+      border-color: #b77d4b;
+    }
+
+    .footer-note {
+      margin-top: 0.6rem;
+      color: #5b4530;
+      font-size: 0.85rem;
+      text-align: center;
+      width: 100%;
+      opacity: 0.75;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.5rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+      }
+
+      .advantage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 1.6rem 1.2rem;
+        border-radius: 28px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1.4rem 1.5rem;
+      }
+
+      .footer-links a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero {
+        padding: 2.2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>资料整理 · <span>吉祥坊</span></h1>
+    <p>将零散的信息索引汇聚成一份可翻阅的笔记，方便自己，也方便路过的人。</p>
+  </div>
+
+  <!-- 优势区：索引思路 + 特点 -->
+  <div class="card">
+    <h2>为什么建这样一个索引页</h2>
+    <div class="advantage-grid">
+      <div class="advantage-item">
+        <strong>📋 分类归档</strong>
+        <p>日常浏览时看到的相关资料、功能介绍、使用场景，按主题整理，避免信息散落在收藏夹里吃灰。</p>
+      </div>
+      <div class="advantage-item">
+        <strong>🔍 快速回溯</strong>
+        <p>比起重新搜索，从自己的索引页出发能更快找到之前留意过的内容，尤其适合需要反复查阅的细节。</p>
+      </div>
+      <div class="advantage-item">
+        <strong>🧩 模块化记录</strong>
+        <p>把「平台特点」「常见疑问」「更新动态」分别归档，想了解哪块直接定位，不用从头翻到尾。</p>
+      </div>
+      <div class="advantage-item">
+        <strong>📎 保持精简</strong>
+        <p>索引不是百科，只收录自己觉得有用、经得起推敲的信息，节省阅读负担。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区：切入角度——资料整理 -->
+  <div class="card desc-block">
+    <h2>从信息索引的角度聊一聊</h2>
+    <p>
+      最开始只是想给周围的朋友做一个简单的信息聚合——把关于 <a href="https://indexs-wellbet.com" class="inline-link">吉祥坊</a> 的一些常见介绍、功能模块、界面风格以及相关讨论汇总到一个页面里。
+      后来发现，这种「自己整理给自己看」的索引方式，其实很适合那些想要快速了解一个品牌或服务的人。
+    </p>
+    <p>
+      这个页面就是这样一个资料夹：没有广告式的渲染，只有对现有公开信息做的归类与简述。
+      比如界面特点、常用功能、内容更新频率，以及用户社区里经常提到的几个注意点，我都按主题拆成了小块。
+      如果你也在慢慢了解 <a href="https://indexs-wellbet.com" class="inline-link">吉祥坊</a>，希望这份索引能帮你省下一些零碎时间。
+    </p>
+    <p style="font-style: italic; color: #624b35; border-left: 3px solid #dbb48b; padding-left: 1rem;">
+      索引本身会持续调整，我也在边用边补充，所以内容会随着使用慢慢变完整。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="card">
+    <h2>常见疑问 · 摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">这个索引页面多久更新一次？</div>
+      <div class="faq-a">看到值得收录的新信息就会顺手加上，没有固定周期。如果你有想补充的内容，欢迎通过页面底部的链接反馈。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">收录的信息来源可靠吗？</div>
+      <div class="faq-a">主要来自官方说明、用户公开分享以及长期使用者的经验谈。每一条都经过交叉对比，但建议你做最终判断前再自行核实一下。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">可以直接跳转到主站吗？</div>
+      <div class="faq-a">当然，下面专门放了一个入口。另外文中也嵌入了链接，比如直接访问 <a href="https://indexs-wellbet.com">吉祥坊</a> 就能看到最新的内容布局。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">索引里的内容适合新手吗？</div>
+      <div class="faq-a">是的，大部分条目都是从我作为新手的视角整理的，避免了太多术语，尽量用生活化的语言描述。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <p style="font-weight: 500;">📎 资料索引 · 持续收集中</p>
+    <a href="https://indexs-wellbet.com">吉祥坊</a>
+    <div class="footer-note">
+      本页为个人整理索引，不构成任何引导或建议。内容仅供参考，请以官方信息为准。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
