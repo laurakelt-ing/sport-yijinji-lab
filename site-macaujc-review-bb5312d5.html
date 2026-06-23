@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门六合彩 · 资讯介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #faf5ed;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #3a2f28;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+        .page-wrap {
+            max-width: 820px;
+            margin: 2.8rem auto;
+            background: #fffcf7;
+            padding: 3rem 2.2rem 2.8rem;
+            border-radius: 18px;
+            box-shadow: 0 8px 28px rgba(90, 60, 40, 0.06);
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: center;
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #e8ddd0;
+            padding-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4d382a;
+            margin-bottom: 0.5rem;
+        }
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #7a685a;
+            font-style: italic;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .hero .sub strong {
+            font-weight: 500;
+            color: #5e4030;
+        }
+
+        /* 卡片类通用 */
+        .card-section {
+            margin: 2.6rem 0;
+        }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #4a3426;
+            border-left: 4px solid #b2967c;
+            padding-left: 0.8rem;
+            margin-bottom: 1.4rem;
+        }
+
+        /* 优势区 —— 两列网格 */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .adv-item {
+            background: #f7efe6;
+            padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #cbb29a;
+            transition: background 0.2s;
+        }
+        .adv-item:hover {
+            background: #f0e4d6;
+        }
+        .adv-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: #3f2c1e;
+        }
+        .adv-item p {
+            font-size: 0.95rem;
+            color: #5f4c3b;
+            margin: 0;
+        }
+
+        /* 说明区 —— 引文/提示框 */
+        .note-box {
+            background: #f4ede5;
+            padding: 1.5rem 1.8rem;
+            border-radius: 14px;
+            border: 1px solid #e3d4c4;
+            margin: 1.8rem 0;
+            font-size: 0.98rem;
+            color: #4d3a2c;
+        }
+        .note-box strong {
+            color: #5b3f2b;
+        }
+        .quote-block {
+            background: #fff8f0;
+            border-left: 6px solid #b59a80;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+            font-style: normal;
+            color: #4c3a2b;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 6px rgba(100, 70, 40, 0.04);
+        }
+        .quote-block p {
+            margin: 0.2rem 0;
+        }
+
+        /* FAQ 摘要 */
+        .faq-list {
+            margin-top: 0.8rem;
+        }
+        .faq-item {
+            border-bottom: 1px dashed #ddd2c4;
+            padding: 0.9rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #3f2d1e;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            font-size: 0.95rem;
+            color: #5c4a39;
+            padding-left: 0.5rem;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 2.8rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e4d7ca;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .footer-links a {
+            color: #5e3f2b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b2967c;
+            transition: border-color 0.15s;
+        }
+        .footer-links a:hover {
+            border-bottom: 1px solid #7a5b42;
+        }
+        .footer-links .sep {
+            margin: 0 0.6rem;
+            color: #cfbcab;
+        }
+        .footer-note {
+            margin-top: 1.2rem;
+            font-size: 0.85rem;
+            color: #9c8877;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .page-wrap {
+                padding: 1.8rem 1.2rem;
+                margin: 1.2rem auto;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .advantages-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .adv-item {
+                padding: 1rem;
+            }
+            .quote-block {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>澳门六合彩</h1>
+        <div class="sub">
+            一个常被问及的名字，背后是本地延续多年的数字游戏。<br>
+            这里没有浮夸的承诺，只有关于 <strong>澳门六合彩</strong> 最基本的脉络与用途说明。
+        </div>
+    </div>
+
+    <!-- 优势区：两个维度 -->
+    <div class="card-section">
+        <div class="section-title">为什么有人会留意这个站点</div>
+        <div class="advantages-grid">
+            <div class="adv-item">
+                <h3>信息指向清晰</h3>
+                <p>站点定位明确，围绕澳门六合彩这一主题，提供规则、历史与常见疑问的参考。</p>
+            </div>
+            <div class="adv-item">
+                <h3>内容侧重实用性</h3>
+                <p>不堆砌无关资讯，把注意力放在玩法结构、术语解释以及参与者常问的问题上。</p>
+            </div>
+            <div class="adv-item">
+                <h3>长期稳定存在</h3>
+                <p>该站点已持续运营一段时间，页面内容保持更新，风格一致，便于反复查阅。</p>
+            </div>
+            <div class="adv-item">
+                <h3>接触门槛低</h3>
+                <p>无需注册或下载，直接通过浏览器即可浏览核心内容，适合快速了解大致框架。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区 + 引文块 -->
+    <div class="card-section">
+        <div class="section-title">关于这个站点的用途</div>
+        <div class="note-box">
+            ⚡ 如果你在网上搜索“澳门六合彩”，很可能会遇到好几个面貌相似的网站。
+            而 <strong>https://site--macaujc.com</strong> 是其中一家以资讯聚合为主的页面——
+            它并不销售任何服务，而是把与澳门六合彩有关的规则、开奖常识、术语整理在一起。
+        </div>
+
+        <div class="quote-block">
+            <p>“第一次看到这个网站时，我其实只是想确认一下玩法里的‘特码’到底是什么意思。里面的解释很平实，没有多余引导，读完就明白了。” —— 一位使用者的转述</p>
+        </div>
+
+        <p style="margin-top:1rem;">
+            整个页面给人的感觉更像是一份静态的说明手册：标题分明，段落克制，不弹窗，不催促。
+            如果你想快速判断这个站点是否对你有用，可以留意它的内容组织方式 —— 是否直接回答了你心里那个最基础的问题。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card-section">
+        <div class="section-title">常见疑问 · 摘要</div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q">▸ 这个网站是官方机构吗？</div>
+                <div class="faq-a">不是。它是一个信息聚合页面，内容基于公开资料与常见规则整理，不代表任何官方立场。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">▸ 上面能找到历史开奖号码吗？</div>
+                <div class="faq-a">部分页面会收录往期号码作为示例参考，但并非实时更新数据库，建议以官方渠道为准。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">▸ 需要付费才能浏览吗？</div>
+                <div class="faq-a">完全免费，所有内容公开可见，无隐藏付费模块。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">▸ 站内会不会有诱导下载的链接？</div>
+                <div class="faq-a">目前页面结构干净，没有外链跳转或下载引导，你可以放心浏览文字内容。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p style="margin-bottom:0.5rem;">
+            如果你想进一步了解，可以直接前往
+            <a href="https://site--macaujc.com">澳门六合彩</a>
+            页面，查看完整的规则说明与术语表。
+        </p>
+        <p class="footer-note">
+            本站仅作静态介绍，不构成任何操作建议。请理性对待所有数字游戏。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
